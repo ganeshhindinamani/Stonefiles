@@ -1,0 +1,68 @@
+background_opacity: 0.9
+colors:
+  # Default colors
+  primary:
+    background: '#292C3E'
+    foreground: '#EBEBEB'
+
+  # Cursor colors
+  cursor:
+    text: '#FF261E'
+    cursor: '#FF261E'
+
+  # Normal colors
+  normal:
+    black: '#0d0d0d'
+    red: '#FF301B'
+    green: '#A0E521'
+    yellow: '#FFC620'
+    blue: '#1BA6FA'
+    magenta: '#8763B8'
+    cyan: '#21DEEF'
+    white: '#EBEBEB'
+
+  # Bright colors
+  bright:
+    black: '#6D7070'
+    red: '#FF4352'
+    green: '#B8E466'
+    yellow: '#FFD750'
+    blue: '#1BA6FA'
+    magenta: '#A578EA'
+    cyan: '#73FBF1'
+    white: '#FEFEF8'
+cursor:
+  style: Block
+  unfocused_hollow: true
+draw_bold_text_with_bright_colors: true
+font:
+  bold:
+    family: Fantasque Sans Mono
+    style: Bold
+  italic:
+    family: Fantasque Sans Mono
+    style: Italic
+  normal:
+    family: Fantasque Sans Mono
+    style: Regular
+  offset:
+    x: 0
+    y: 5
+  size: 13
+  use_thin_strokes: false
+key_bindings:
+  - action: SpawnNewInstance
+    key: N
+    mods: Control
+  - action: ToggleFullscreen
+    key: Return
+    mods: Control
+scrolling:
+  history: 10000
+  multiplier: 3
+window:
+  padding:
+    x: 5
+    y: 5
+  startup_mode: Maximized
+window.dynamic_title: true

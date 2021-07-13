@@ -1,0 +1,17 @@
+[Unit]
+Description=Lock X session using betterlockscreeen for user
+Before=sleep.target
+Before=suspend.target
+
+[Service]
+User=ganesh
+Type=forking
+Environment=DISPLAY=:0
+ExecStartPre=/usr/bin/xset dpms force suspend
+ExecStart=/usr/bin/betterlockscreen -l blur
+ExecStartPost=sleep 2
+TimeoutSec=infinity
+
+[Install]
+WantedBy=sleep.target
+WantedBy=suspend.target
