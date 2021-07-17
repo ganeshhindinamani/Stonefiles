@@ -39,7 +39,7 @@ format-offset =
 
 [colors]
 ; Nord theme ============
-background = #2F343F
+background = #002F343F
 foreground = #f3f4f5
 alert = #d08770
 volume-min = #a3be8c
@@ -80,7 +80,7 @@ monitor = ${env:MONITOR}
 monitor-strict = false
 override-redirect = false
 width = 100%
-height = 32
+height = 35
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
@@ -112,11 +112,16 @@ module-margin-right = 3
 enable-ipc = true
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=12;0"
-font-1 = "FontAwesome:size=12;0"
-font-2 = "Noto Sans:size=12;0"
-font-3 = "Noto Sans Mono:size=12;0"
-font-4 = "FontAwesome5Brands:size=13;0"
+;font-0 = "Noto Sans:size=14;0"
+font-0 = "FontAwesome:size=13;0"
+font-1 = "NotoSansMono Nerd Font:size=13.5;0"
+;font-2 = "Noto Sans:size=12;0"
+;font-3 = "Noto Sans Mono:size=12;0"
+;font-4 = "FontAwesome5Brands:size=12;0"
+
+
+;font-2 = "Fantasque Sans Mono:size=12;0"
+;font-3 = "Fantasque Sans Mono:size=12;0"
 
 modules-left = ewmh xwindow
 ;modules-center = system-fan-speed
@@ -924,7 +929,7 @@ label = U: %output%
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = " "
+format-prefix = "  "
 format-prefix-foreground = #C15D3E
 ;format-underline = #C15D3E
 
@@ -1121,7 +1126,7 @@ type = internal/xwindow
 ;   %title%
 ; Default: %title%
 label = %title%
-label-maxlen = 50
+label-maxlen = 30
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
