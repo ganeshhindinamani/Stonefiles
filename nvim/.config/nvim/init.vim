@@ -41,3 +41,6 @@ set guifont=Fantasque\ Sans\ Mono:h22
 
 
 let g:neovide_transparency=0.75
+
+" 3<leader>tl will clear neoterm-3.
+nnoremap <leader>tl :<c-u>exec v:count.'Tclear'<cr>

@@ -261,7 +261,7 @@ draw_bold_text_with_bright_colors: true
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.8
+background_opacity: 0.4
 
 #selection:
 #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -530,33 +530,6 @@ key_bindings:
   - action: ToggleFullscreen
     key: Return
     mods: Control
-colors:
-  # Default colors
-  primary:
-    background: "#282a36"
-    foreground: "#f8f8f2"
-
-  # Normal colors
-  normal:
-    black: "#000000"
-    red: "#ff5555"
-    green: "#50fa7b"
-    yellow: "#f1fa8c"
-    blue: "#caa9fa"
-    magenta: "#ff79c6"
-    cyan: "#8be9fd"
-    white: "#bfbfbf"
-
-  # Bright colors
-  bright:
-    black: "#575b70"
-    red: "#ff6e67"
-    green: "#5af78e"
-    yellow: "#f4f99d"
-    blue: "#caa9fa"
-    magenta: "#ff92d0"
-    cyan: "#9aedfe"
-    white: "#e6e6e6"
 #debug:
 # Display the time it takes to redraw each frame.
 #render_timer: false
@@ -575,3 +548,33 @@ colors:
 # Print all received window events.
 #print_events: false
 # Custom colorscheme fitting Sweetified theme
+# Colors (Tomorrow Night Bright)
+colors:
+  # Default colors
+  primary:
+    # hard contrast: background = '#1d2021'
+    background: '#282828'
+    # soft contrast: background = '#32302f'
+    foreground: '#ebdbb2'
+
+  # Normal colors
+  normal:
+    black: '#282828'
+    red: '#cc241d'
+    green: '#98971a'
+    yellow: '#d79921'
+    blue: '#458588'
+    magenta: '#b16286'
+    cyan: '#689d6a'
+    white: '#a89984'
+
+  # Bright colors
+  bright:
+    black: '#928374'
+    red: '#fb4934'
+    green: '#b8bb26'
+    yellow: '#fabd2f'
+    blue: '#83a598'
+    magenta: '#d3869b'
+    cyan: '#8ec07c'
+    white: '#ebdbb2'

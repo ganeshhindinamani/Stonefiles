@@ -33,6 +33,8 @@ call plug#begin('~/Stonefiles/nvim/.config/nvim/autoload/plugged')
     Plug 'liuchengxu/vim-which-key'
     " commentary
     Plug 'tpope/vim-commentary'
+    " terminal
+    Plug 'kassio/neoterm'
 
 call plug#end()
 

@@ -1,4 +1,4 @@
 #xautolock -time 5 -locker "systemctl suspend" -detectsleep &
 
 # zsh config dir
-export ZDOTDIR=$HOME/.config/zsh
+#export ZDOTDIR=$HOME/.config/zsh

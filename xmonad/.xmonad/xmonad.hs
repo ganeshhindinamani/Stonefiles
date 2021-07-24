@@ -58,8 +58,8 @@ winType  = "#c678dd"
 
 myModMask = mod4Mask
 encodeCChar = map fromIntegral . B.unpack
-myFocusFollowsMouse = False
-myBorderWidth = 2
+myFocusFollowsMouse = True
+myBorderWidth = 3
 myWorkspaces    = ["\61899","\61612","\61635","\61501","\61564","\61502","\61705","\62150","\61872","\61947"]
 --myWorkspaces    = ["\61612","\61899","\61947","\61635","\61502","\61501","\61705","\61564","\62150","\61872"]
 --myWorkspaces    = ["1","2","3","4","5","6","7","8","9","10"]
@@ -88,7 +88,7 @@ myManageHook = composeAll . concat $
     where
     -- doShiftAndGo = doF . liftM2 (.) W.greedyView W.shift
     myCFloats = ["Arandr", "Arcolinux-calamares-tool.py", "Arcolinux-tweak-tool.py", "Arcolinux-welcome-app.py", "Galculator", "feh", "mpv", "Xfce4-terminal"]
-    myTFloats = ["Downloads", "Save As..."]
+    myTFloats = ["Downloads", "Save As...", "Arcologout.py"]
     myRFloats = []
     myIgnores = ["desktop_window"]
     -- my1Shifts = ["Chromium", "Vivaldi-stable", "Firefox"]
@@ -136,7 +136,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [ ((modMask, xK_e), spawn $ "atom" )
   , ((modMask, xK_c), spawn $ "conky-toggle" )
   , ((modMask, xK_f), sendMessage $ Toggle NBFULL)
-  , ((modMask, xK_h), spawn $ "kitty -e ranger" )
+  , ((modMask, xK_m), spawn $ "kitty -e ranger" )
   , ((modMask, xK_n), spawn $ "kitty -e nvim" )
   --, ((modMask, xK_m), spawn $ "pragha" )
   , ((modMask, xK_q), kill )
@@ -146,8 +146,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_v), spawn $ "pavucontrol" )
   , ((modMask, xK_y), spawn $ "polybar-msg cmd toggle" )
   , ((modMask, xK_x), spawn $ "arcolinux-logout" )
-  , ((modMask, xK_l), spawn $ "arcolinux-logout" )
-  , ((modMask, xK_u), spawn $ "firefox" )
+  -- , ((modMask, xK_l), spawn $ "arcolinux-logout" )
+  , ((modMask, xK_b), spawn $ "brave" )
   , ((modMask, xK_i), spawn $ "klavaro" )
   , ((modMask, xK_Escape), spawn $ "xkill" )
   , ((modMask, xK_Return), spawn $ "kitty" )
@@ -171,9 +171,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- SUPER + SHIFT KEYS
 
-  , ((modMask .|. shiftMask , xK_Return ), spawn $ "thunar")
-  --, ((modMask .|. shiftMask , xK_d ), spawn $ "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:normal:pixelsize=18'")
-  , ((modMask .|. shiftMask , xK_d ), spawn $ "dmenu_run -i -nb '#191919' -nf '#bd93f9' -sb '#bd93f9' -sf '#191919' -fn 'NotoMonoRegular:normal:pixelsize=18'")
+  , ((modMask .|. shiftMask , xK_l ), spawn $ "thunar")
+  , ((modMask .|. shiftMask , xK_Return ), spawn $ "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:normal:pixelsize=22'")
+  --, ((modMask .|. shiftMask , xK_d ), spawn $ "dmenu_run -i -nb '#191919' -nf '#bd93f9' -sb '#bd93f9' -sf '#191919' -fn 'NotoMonoRegular:normal:pixelsize=18'")
   , ((modMask .|. shiftMask , xK_r ), spawn $ "xmonad --recompile && xmonad --restart")
   , ((modMask .|. shiftMask , xK_q ), kill)
   -- , ((modMask .|. shiftMask , xK_x ), io (exitWith ExitSuccess))
@@ -306,10 +306,12 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((controlMask .|. modMask, xK_Up), windows W.swapUp  )
 
   -- Shrink the master area.
-  , ((controlMask .|. shiftMask , xK_h), sendMessage Shrink)
+  --, ((controlMask .|. shiftMask , xK_h), sendMessage Shrink)
+  , ((modMask, xK_h), sendMessage Shrink)
 
   -- Expand the master area.
-  , ((controlMask .|. shiftMask , xK_l), sendMessage Expand)
+  -- , ((controlMask .|. shiftMask , xK_l), sendMessage Expand)
+  , ((modMask, xK_l), sendMessage Expand)
 
   -- Push window back into tiling.
   , ((controlMask .|. shiftMask , xK_t), withFocused $ windows . W.sink)
@@ -379,7 +381,3 @@ main = do
 , keys = myKeys
 , mouseBindings = myMouseBindings
 }
-
-
-exec -time 1 -locker 'betterlockscreen -l dim' -detectsleep
-exec -time 7 -locker "systemctl suspend" &

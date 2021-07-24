@@ -14,7 +14,7 @@
 [global/wm]
 ;https://github.com/jaagr/polybar/wiki/Configuration#global-wm-settings
 margin-top = 0
-margin-bottom = 5
+margin-bottom = 10
 
 [settings]
 ;https://github.com/jaagr/polybar/wiki/Configuration#application-settings
@@ -79,7 +79,7 @@ monitor = ${env:MONITOR}
 monitor-strict = false
 override-redirect = false
 width = 100%
-height = 32
+height = 35
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
@@ -111,15 +111,22 @@ module-margin-right = 3
 enable-ipc = true
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=12;0"
-font-1 = "FontAwesome:size=12;0"
-font-2 = "Noto Sans:size=12;0"
-font-3 = "Noto Sans Mono:size=12;0"
-font-4 = "FontAwesome5Brands:size=13;0"
+font-0 = "Noto Sans:size=13;0"
+font-1 = "FontAwesome:size=13;0"
+;font-2 = "Noto Sans:size=12;0"
+;font-3 = "Noto Sans Mono:size=12;0"
+;font-4 = "FontAwesome5Brands:size=13;0"
+
+
+;font-0 = "Consolas Ligaturized:size=13;0"
+;font-1 = "FontAwesome:size=13;0"
+;font-2 = "Noto Sans:size=12;0"
+;font-3 = "Noto Sans Mono:size=12;0"
+;font-4 = "FontAwesome5Brands:size=13;0"
 
 modules-left = ewmh xwindow
-;modules-center = system-fan-speed
-modules-right = networkspeeddown backlight pavolume memory2 cpu2 uptime battery temperature1 time
+;modules-center = 
+modules-right = networkspeeddown backlight pavolume memory2 cpu2 uptime battery temperature1 time filesystem
 tray-detached = false
 tray-offset-x = 0
 tray-offset-y = 0
@@ -127,9 +134,7 @@ tray-padding = 2
 tray-maxsize = 20
 tray-scale = 1.0
 tray-position = right
-;tray-background = ${colors.background}
-;tray-transparent = true
-
+tray-background = ${colors.background}
 
 ################################################################################
 ################################################################################
@@ -247,14 +252,16 @@ card = amdgpu_bl0
 
 use-actual-brightness = true
 enable-scroll = true
-;click-left = exec "light -S 10"
+;click-right = ~/.config/polybar/scripts/light.sh --up
+click-right = thunar
+click-left = ~/.config/polybar/scripts/light.sh --down
 
 ; Available tags:
 ;   <label> (default)
 ;   <ramp>
 ;   <bar>
 format = <label>
-format-prefix = "   "
+format-prefix = "  "
 format-foreground = ${colors.volume-med}
 format-background = ${colors.background}
 ;format-underline = ${colors.volume-med}
@@ -286,13 +293,13 @@ adapter = ADP1
 full-at = 100
 
 format-charging = <animation-charging> <label-charging>
-label-charging =  %percentage%%
+label-charging =   %percentage%%
 format-charging-foreground = ${colors.foreground}
 format-charging-background = ${colors.background}
 ;format-charging-underline = #a3c725
 
-format-discharging = <ramp-capacity> <label-discharging>
-label-discharging =  %percentage%%
+format-discharging = <ramp-capacity>  <label-discharging>
+label-discharging =   %percentage%%
 ;format-discharging-underline = #c7ae25
 format-discharging-foreground = ${colors.foreground}
 format-discharging-background = ${colors.background}
@@ -317,6 +324,7 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-foreground = #a3c725
 animation-charging-framerate = 750
+click-right = thunar
 
 ################################################################################
 
@@ -383,7 +391,7 @@ type = internal/cpu
 interval = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
+format-prefix = "   "
 format-prefix-foreground = #cd1f3f
 ;format-underline = #cd1f3f
 
@@ -515,7 +523,7 @@ spacing = 4
 format-mounted = <label-mounted>
 format-mounted-foreground = ${colors.foreground}
 format-mounted-background = ${colors.background}
-format-mounted-underline = #fe0000
+;format-mounted-underline = #fe0000
 
 
 ; Available tokens:
@@ -528,7 +536,9 @@ format-mounted-underline = #fe0000
 ;   %free%
 ;   %used%
 ; Default: %mountpoint% %percentage_free%%
-label-mounted = %mountpoint% : %used% used of %total%
+;label-mounted = %mountpoint% : %used% used of %total%
+label-mounted =   : %used%
+
 
 ; Available tokens:
 ;   %mountpoint%
@@ -627,7 +637,7 @@ interval = 1
 label = %percentage_used%%
 
 format = Mem <label>
-format-prefix = "  "
+format-prefix = "   "
 format-prefix-foreground = #3384d0
 ;format-underline = #3384d0
 format-foreground = ${colors.foreground}
@@ -710,7 +720,7 @@ interface = wlp1s0
 ;interface = enp4s0
 label-connected = "%downspeed:7%"
 format-connected = <label-connected>
-format-connected-prefix = ""
+format-connected-prefix = " "
 format-connected-prefix-foreground = #3EC13F
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
@@ -881,7 +891,7 @@ thermal-zone = 0
 hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input
 
 warn-temperature = 90
-format = <ramp> <label>
+format = <ramp>  <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 #format-underline = #c72581
@@ -923,7 +933,7 @@ label = U: %output%
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = " "
+format-prefix = "   "
 format-prefix-foreground = #C15D3E
 ;format-underline = #C15D3E
 
@@ -1065,29 +1075,29 @@ ramp-signal-foreground = #7e52c6
 
 ################################################################################
 
-[module/xbacklight]
-;https://github.com/jaagr/polybar/wiki/Module:-xbacklight
-type = internal/xbacklight
+;[module/xbacklight]
+;;https://github.com/jaagr/polybar/wiki/Module:-xbacklight
+;type = internal/xbacklight
 ;card = amdgpu_bl0
-format = <label> <bar>
-format-prefix = "   "
-format-prefix-foreground = ${colors.foreground}
-format-prefix-background = ${colors.background}
-format-prefix-underline = #9f78e1
-format-underline = #9f78e1
-label = %percentage%%
-bar-width = 10
-bar-indicator = 
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = 
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = 
-bar-empty-font = 2
-bar-empty-foreground = #fff
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+;format = <label> <bar>
+;format-prefix = "   "
+;format-prefix-foreground = ${colors.foreground}
+;format-prefix-background = ${colors.background}
+;format-prefix-underline = #9f78e1
+;format-underline = #9f78e1
+;label = %percentage%%
+;bar-width = 10
+;bar-indicator = 
+;bar-indicator-foreground = #fff
+;bar-indicator-font = 2
+;bar-fill = 
+;bar-fill-font = 2
+;bar-fill-foreground = #9f78e1
+;bar-empty = 
+;bar-empty-font = 2
+;bar-empty-foreground = #fff
+;format-foreground = ${colors.foreground}
+;format-background = ${colors.background}
 
 ################################################################################
 
@@ -1120,7 +1130,7 @@ type = internal/xwindow
 ;   %title%
 ; Default: %title%
 label = %title%
-label-maxlen = 50
+label-maxlen = 30
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -1140,7 +1150,8 @@ initial = 1
 type = custom/script
 exec = date +"%d / %I:%M:%S %p"
 ;exec = date '+%d/%m/%Y %H:%M:%S'
-click-left = thunar &
+click-left = thunar
+click-right = light -S 50
 label = "%output%"
 interval = 5
 format-foreground = ${colors.foreground}
