@@ -1,0 +1,8 @@
+ctrl + i ; {i,k,o,n}
+	{thunar,klavaro,firefox,dmenu_run -i -nb '#191919' -nf '#bd93f9' -sb '#bd93f9' -sf '#191919' -fn 'NotoMonoRegular:normal:pixelsize=18'}
+
+ctrl + m ; {i,o,p,l,n}
+	{light -S 50,light -S 30,light -S 90,virtualbox,neovide}
+
+ctrl + n ; {l,p,o}
+	{systemctl logout,systemctl poweroff,systemctl reboot}
