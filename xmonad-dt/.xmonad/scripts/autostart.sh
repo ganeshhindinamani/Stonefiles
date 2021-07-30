@@ -17,7 +17,7 @@ function run {
 #xrandr --output LVDS1 --mode 1366x768 --output DP3 --mode 1920x1080 --right-of LVDS1
 #xrandr --output HDMI2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 
-(sleep 0; run $HOME/.config/polybar/launch.sh) &
+(sleep 1; run $HOME/.config/polybar/launch.sh) &
 
 #change your keyboard if you need it
 #setxkbmap -layout be
@@ -26,25 +26,28 @@ function run {
 xsetroot -cursor_name left_ptr &
 
 #start ArcoLinux Welcome App
-run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
+# run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 
+feh --bg-fill -z ~/Pictures/Wallpapers
+#feh --bg-fill -z ~/Music/Neon
 #Some ways to set your wallpaper besides variety or nitrogen
-feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
+#feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #start the conky to learn the shortcuts
 #(conky -c $HOME/.xmonad/scripts/system-overview) &
 
 #starting utility applications at boot time
-run variety &
+# run variety &
 run nm-applet &
 #run pamac-tray &
 #run xfce4-power-manager &
-run volumeicon &
+#run volumeicon &
 #numlockx on &
 #blueberry-tray &
-picom --config $HOME/.xmonad/scripts/picom.conf &
+#picom --config $HOME/.xmonad/scripts/picom.conf &
+picom &
 sxhkd -c $HOME/.xmonad/scripts/sxhkdrc &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-/usr/lib/xfce4/notifyd/xfce4-notifyd &
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#/usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 #starting user applications at boot time
 #nitrogen --restore &
