@@ -1,4 +1,14 @@
-#xautolock -time 5 -locker "systemctl suspend" -detectsleep &
+# Environment variables set everywhere
+export EDITOR="nvim"
+export TERMINAL="st"
+export BROWSER="brave"
+
+# For QT Themes
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+xbansih &
+
+xautolock -time 15 -locker "systemctl suspend" -detectsleep &
 
 # zsh config dir
 #export ZDOTDIR=$HOME/.config/zsh

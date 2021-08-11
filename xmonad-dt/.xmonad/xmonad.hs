@@ -5,6 +5,8 @@ import System.IO (hPutStrLn)
 import System.Exit (exitSuccess)
 import qualified XMonad.StackSet as W
 
+import XMonad.Hooks.RefocusLast
+
     -- Actions
 import XMonad.Actions.CopyWindow (kill1)
 import XMonad.Actions.CycleWS (Direction1D(..), moveTo, shiftTo, WSType(..), nextScreen, prevScreen)
@@ -76,7 +78,7 @@ myTerminal :: String
 myTerminal = "kitty"    -- Sets default terminal
 
 myBrowser :: String
-myBrowser = "chromium "  -- Sets qutebrowser as browser
+myBrowser = "brave"  -- Sets qutebrowser as browser
 --myBrowser = "firefox "  -- Sets qutebrowser as browser
 
 myEmacs :: String
@@ -295,7 +297,23 @@ myTabTheme = def { fontName            = myFont
 --    }
 
 -- The layout hook
-myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats
+--myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats
+--               $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
+--             where
+--               myDefaultLayout =     withBorder myBorderWidth tall
+--                                 ||| withBorder myBorderWidth monocle
+--                                 ||| noBorders monocle
+--                                 ||| magnify
+--                                 ||| floats
+--                                 ||| noBorders tabs
+--                                 ||| grid
+--                                 ||| spirals
+--                                 ||| threeCol
+--                                 ||| threeRow
+--                                 ||| tallAccordion
+--                                 ||| wideAccordion
+
+myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats $ refocusLastLayoutHook
                $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
              where
                myDefaultLayout =     withBorder myBorderWidth tall
@@ -355,7 +373,11 @@ myKeys =
         , ("M-S-q", io exitSuccess)              -- Quits xmonad
 
     -- Run Prompt
-        , ("M-S-<Return>", spawn "dmenu_run -i -p \"Run: \"") -- Dmenu
+        --, ("M-S-<Return>", spawn "dmenu_run -i -p \"Run: \"") -- Dmenu
+        --, ("M-S-<Return>", spawn "dmenu_run -i -p ' Arch:' -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Consolas Ligaturized:normal:pixelsize=24'") -- Dmenu
+        --, ("M-S-<Return>", spawn "dmenu_run -i -p ' Arch:' -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Ubuntu Mono:normal:pixelsize=24'") -- Dmenu
+        , ("M-S-<Return>", spawn "dmenu_run -i -p ' Arch:' -nb '#191919' -nf '#bd93f9' -sb '#bd93f9' -sf '#191919' -fn 'Ubuntu Mono:normal:pixelsize=24'") -- Dmenu
+  --, ((modMask .|. shiftMask , xK_Return ), spawn $ "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:normal:pixelsize=22'")
 
     -- Other Dmenu Prompts
     -- In Xmonad and many tiling window managers, M-p is the default keybinding to
@@ -377,6 +399,14 @@ myKeys =
         , ("M-<Return>", spawn (myTerminal))
         , ("M-b", spawn (myBrowser))
         , ("M-M1-h", spawn (myTerminal ++ " -e htop"))
+
+    -- Additional
+        , ("M-n", spawn "kitty -e nvim")
+        , ("M-S-h", spawn "kitty -e ranger")
+        , ("M-v", spawn "kitty -e vtop")
+        , ("M-S-l", spawn "vscodium")
+
+        , ("M1-n", spawn "feh --bg-fill -z ~/Pictures/Wallpapers")
 
     -- Kill windows
         , ("M-S-c", kill1)     -- Kill the currently focused client

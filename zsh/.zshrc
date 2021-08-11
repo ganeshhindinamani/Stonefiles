@@ -412,9 +412,13 @@ alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.="exa -a | egrep '^\.'"
 
+alias fasterstmirror='reflector --protocol https --sort rate -l 20 --save /etc/pacman.d/mirrorlist'
+
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
 alias searchpac="pacman -Slq | fzf -m --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")' | xargs -ro sudo pacman -S"
 export LC_ALL=en_US.UTF-8
 export LANG=en_us.UTF-8
+
+

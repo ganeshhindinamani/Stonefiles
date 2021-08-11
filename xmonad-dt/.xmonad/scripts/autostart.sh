@@ -17,7 +17,7 @@ function run {
 #xrandr --output LVDS1 --mode 1366x768 --output DP3 --mode 1920x1080 --right-of LVDS1
 #xrandr --output HDMI2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 
-(sleep 1; run $HOME/.config/polybar/launch.sh) &
+(sleep 0; run $HOME/.config/polybar/launch.sh) &
 
 #change your keyboard if you need it
 #setxkbmap -layout be
@@ -43,8 +43,8 @@ run nm-applet &
 #run volumeicon &
 #numlockx on &
 #blueberry-tray &
-#picom --config $HOME/.xmonad/scripts/picom.conf &
-picom &
+picom --config $HOME/.xmonad/scripts/picom.conf &
+#picom &
 sxhkd -c $HOME/.xmonad/scripts/sxhkdrc &
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #/usr/lib/xfce4/notifyd/xfce4-notifyd &
@@ -63,3 +63,5 @@ sxhkd -c $HOME/.xmonad/scripts/sxhkdrc &
 #run dropbox &
 #run insync start &
 #run ckb-next -b &
+
+run polkit-dumb-agent
