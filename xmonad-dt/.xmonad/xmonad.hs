@@ -78,8 +78,8 @@ myTerminal :: String
 myTerminal = "kitty"    -- Sets default terminal
 
 myBrowser :: String
-myBrowser = "brave"  -- Sets qutebrowser as browser
---myBrowser = "firefox "  -- Sets qutebrowser as browser
+--myBrowser = "brave"  -- Sets qutebrowser as browser
+myBrowser = "firefox "  -- Sets qutebrowser as browser
 
 myEmacs :: String
 myEmacs = "emacsclient -c -a 'emacs' "  -- Makes emacs keybindings easier to type
@@ -361,6 +361,8 @@ myManageHook = composeAll
      , className =? "mpv"             --> doShift ( myWorkspaces !! 7 )
      , className =? "Gimp"            --> doShift ( myWorkspaces !! 8 )
      --, className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 4 )
+     --, className =? "vscodium" --> doShift  ( myWorkspaces !! 4 )
+     --, className =? "VSCodium" --> doShift  ( myWorkspaces !! 3 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
      , isFullscreen -->  doFullFloat
      ] <+> namedScratchpadManageHook myScratchPads

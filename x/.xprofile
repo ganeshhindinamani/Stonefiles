@@ -1,14 +1,16 @@
 # Environment variables set everywhere
-export EDITOR="nvim"
-export TERMINAL="st"
-export BROWSER="brave"
+#export EDITOR="nvim"
+#export TERMINAL="st"
+#export BROWSER="brave"
 
 # For QT Themes
-export QT_QPA_PLATFORMTHEME=qt5ct
+#export QT_QPA_PLATFORMTHEME=qt5ct
 
-xbansih &
+#xbansih &
 
-xautolock -time 15 -locker "systemctl suspend" -detectsleep &
+#xautolock -time 1 -locker "systemctl suspend" -detectsleep &
 
 # zsh config dir
 #export ZDOTDIR=$HOME/.config/zsh
+
+dwmblocks &
