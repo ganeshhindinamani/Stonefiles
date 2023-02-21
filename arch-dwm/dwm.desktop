@@ -1,0 +1,9 @@
+# /usr/share/xsessions
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dwm
+Comment=the dynamic window manager
+Exec=/etc/X11/Xsession
+#Icon=dwm
+#Type=XSession

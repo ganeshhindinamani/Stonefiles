@@ -13,4 +13,12 @@
 # zsh config dir
 #export ZDOTDIR=$HOME/.config/zsh
 
-dwmblocks &
+#dwmblocks
+#xbanish &
+#sxhkd &
+#picom &
+#setbg &
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#/usr/bin/dunst &
+#kitty
+setwallpaper

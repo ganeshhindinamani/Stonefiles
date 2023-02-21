@@ -48,18 +48,23 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-export EDITOR="nvim"
-export BROWSER="firefox"
+#export EDITOR="nvim"
+#export BROWSER="firefox"
+
+# zsh config dir
+#export ZDOTDIR=$HOME/.config/zsh
 
 #firefox &
 #Chromium &
 #dbus-launch thunar &
-xbanish &
-sxhkd &
-picom &
-dwmblocks &
-setbg &
+#xbanish &
+#sxhkd &
+#picom &
+#dwmblocks &
+#setbg &
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#/usr/bin/dunst &
 #while type dwm >/dev/null ; do dbus-launch dwm && continue || break ; done
-while type dwm >/dev/null ; do dwm && continue || break ; done
+#while type dwm >/dev/null ; do dwm && continue || break ; done
 
 #exec dbus-launch xmonad

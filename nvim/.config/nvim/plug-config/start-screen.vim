@@ -4,9 +4,10 @@ let g:startify_lists = [
           \ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
           \ ]
+            " \ { 'a': '~/.config/alacritty/alacritty.yml' },
 
 let g:startify_bookmarks = [
-            \ { 'a': '~/.config/alacritty/alacritty.yml' },
+            \ { 'a': '~/.dwm/autostart.sh' },
             \ { 'f': '~/.config/fish/config.fish' },
             \ { 'i': '~/.config/nvim/init.vim' },
             \ { 'm': '~/.config/kitty/kitty.conf' },
@@ -16,8 +17,8 @@ let g:startify_bookmarks = [
             \ { 'r': '~/.config/ranger/rc.conf' },
             \ { 's': '~/.config/sxhkd/sxhkdrc' },
             \ { 't': '~/.tmux.conf' },
-            \ { 'x': '~/.xmonad/xmonad.hs' },
-            \ { 'z': '~/.zshrc' },
+            \ { 'x': '~/.xsession' },
+            \ { 'z': '~/.config/zsh/.zshrc' },
             \ ]
 
 "let g:startify_custom_header = [
@@ -44,4 +45,12 @@ let g:startify_custom_header = [
        \ '  / / / / ___/   \__ \/ __/ __ \/ __ \/ _ \',
        \ ' / /_/ / /      ___/ / /_/ /_/ / / / /  __/',
        \ '/_____/_/      /____/\__/\____/_/ /_/\___/ ',
+  \ ]
+
+let g:startify_custom_header = [
+       \ '   _____ __                 ',
+       \ '  / ___// /_____  ____  ___ ',
+       \ '  \__ \/ __/ __ \/ __ \/ _ \',
+       \ ' ___/ / /_/ /_/ / / / /  __/',
+       \ '/____/\__/\____/_/ /_/\___/ ',
   \ ]

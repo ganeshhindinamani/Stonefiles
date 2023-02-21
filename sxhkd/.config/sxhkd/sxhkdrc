@@ -1,8 +1,8 @@
-ctrl + i ; {i,k,o,n}
-	{thunar,klavaro,firefox,dmenu_run -i -nb '#191919' -nf '#bd93f9' -sb '#bd93f9' -sf '#191919' -fn 'NotoMonoRegular:normal:pixelsize=20'}
+ctrl + i ; {i,k,o,n,m,p,j,h}
+	{nemo,klavaro,firefox,kitty -e nvim,chromium,kitty -e pulsemixer,setbg,setwallpaper}
 
-ctrl + m ; {i,o,p,l,n}
-	{light -S 50,light -S 30,light -S 90,virtualbox,neovide}
+ctrl + m ; {1,2,3,4,5,6,7,8,9,0,h,j,k,l,p,o,m, u}
+	{light -S 10,light -S 20,light -S 30,light -S 40,light -S 50,light -S 60,light -S 70,light -S 80,light -S 90,light -S 100,light -S 15,light -S 30,light -S 40,light -S 60,flameshot full -p ~/Pictures/react,flameshot screen -p ~/Pictures,betterlockscreen -l, flameshot gui}
 
-ctrl + n ; {l,p,o}
-	{systemctl logout,systemctl poweroff,systemctl reboot}
+ctrl + w ; {l,p,o,n}
+	{systemctl logout,systemctl poweroff,systemctl reboot,redshift -P -O 4500}

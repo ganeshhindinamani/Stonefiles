@@ -7,6 +7,13 @@ Xft.antialias: 1
 Xft.rgba: rgb
 rofi.dpi: 192
 
+
+!SXIV COLORS
+!Sxiv.font: Inconsolata:size=12              Iosevka:size=10 
+Sxiv.font: Inconsolata:size=12
+Sxiv.foreground: #C792EA
+Sxiv.background: #1E2541
+
 !Xft.dpi: 140
 !Xft.autohint: 0
 !Xft.lcdfilter: lcddefault

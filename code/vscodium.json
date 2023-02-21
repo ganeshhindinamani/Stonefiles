@@ -1,0 +1,26 @@
+// "terminal.integrated.profiles.linux": {
+//   "bash": {
+//     "path": "bash",
+//     "icon": "terminal-bash"
+//   },
+//   "zsh": {
+//     "path": "/usr/bin/zsh"
+//   },
+//   "fish": {
+//     "path": "fish"
+//   },
+//   "tmux": {
+//     "path": "tmux",
+//     "icon": "terminal-tmux"
+//   },
+//   "pwsh": {
+//     "path": "pwsh",
+//     "icon": "terminal-powershell"
+//   }
+// },
+
+// "vim.neovimPath": "/usr/bin/nvim",
+// "vscode-neovim.neovimInitVimPaths.linux": "/home/ganesh/.config/nvim/init.vim",
+
+
+//"editor.defaultFormatter": "esbenp.prettier-vscode",

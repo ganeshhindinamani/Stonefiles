@@ -1,0 +1,51 @@
+{
+  "editor.fontFamily": "Fantasque Sans Mono",
+  "editor.fontSize": 18,
+  "editor.lineHeight": 30,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "block",
+  "editor.lineNumbers": "relative",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.smoothScrolling": true,
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.tabSize": 2,
+  "terminal.integrated.fontFamily": "FantasqueSansMono Nerd Font Mono",
+  "terminal.integrated.fontSize": 18,
+  // "files.autoSave": "onWindowChange",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "/usr/bin/zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.wordWrap": "on",
+  "editor.fontLigatures": true,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "markdown-preview-enhanced.previewTheme": "one-dark.css",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "breadcrumbs.enabled": false,
+  "workbench.colorTheme": "Material Theme Palenight High Contrast"
+}
